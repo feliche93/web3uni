@@ -22,7 +22,7 @@ export default function Features() {
                   We help you to learn and use web3 in a fun and interactive way. Follow step-by-step guides and easy tutorials without being afraid to loose money or make mistakes. Once you complete each lesson you will unlock a new exclusive NFT.
                 </p>
                 <div className="mt-6">
-                  <Link href="sign-up">
+                  <Link href="register">
                     <a
                       className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                     >
@@ -82,7 +82,7 @@ export default function Features() {
                   We help you all the way from creating and funding your wallet to minting your first NFT. And it will not stop there. Learn how to join a DAO or use some more advanced DEFI protocols.
                 </p>
                 <div className="mt-6">
-                <Link href="sign-up">
+                <Link href="register">
                     <a
                       className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                     >

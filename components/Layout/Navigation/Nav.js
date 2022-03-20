@@ -6,6 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
 import SectionContent from '../../UI/SectionContent';
+import { useMoralis } from 'react-moralis'
 
 import Link from 'next/link'
 import NavLinks from './NavLinks';
@@ -21,12 +22,17 @@ const navigation = [
 
 const actions = [
   { name: 'Sign in', href: '/login', style: 'secondary', protected: false },
-  { name: 'Sign up', href: '/sign-up', style: 'primary', protected: false },
+  { name: 'Sign up', href: '/register', style: 'primary', protected: false },
 ]
 
 const Nav = () => {
-  // const { user, signOut } = useUser();
+  const { user, logout, isAuthenticated } = useMoralis();
   const router = useRouter()
+
+  const handleLogout = () => {
+    logout()
+    router.push('/')
+  }
 
 
   return (
@@ -60,7 +66,7 @@ const Nav = () => {
           />
 
           <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-            {true ? (
+            {!isAuthenticated ? (
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                 <Link href="/login">
                   <a className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
@@ -79,7 +85,7 @@ const Nav = () => {
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                 <Link href="/register">
                   <button
-                    onClick={signOut}
+                    onClick={handleLogout}
                     className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
                     Logout
@@ -126,7 +132,7 @@ const Nav = () => {
               // user={user}
               mobile="true"
             />
-            {true ? (
+            {!isAuthenticated ? (
               <>
                 <Link href="/login">
                   <a className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100">
@@ -145,7 +151,7 @@ const Nav = () => {
               <div>
                 <Link href="/register">
                   <button
-                    onClick={signOut}
+                    onClick={handleLogout}
                     className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100"
                   >
                     Logout
