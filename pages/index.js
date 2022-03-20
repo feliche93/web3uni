@@ -1,19 +1,16 @@
 import React from 'react'
-import PageHeader from '../components/PageHeader'
-import LessonCard from '../components/LessonCard'
-import ProgressBar from '../components/ProgressBar'
+import Features from '../components/Home/Features';
+import Hero from '../components/Home/Hero';
+import LogoCloud from '../components/Home/LogoCloud';
 
-export default function index() {
+function Index() {
   return (
     <>
-      <PageHeader/>
-      <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-        <div className="space-y-6 lg:col-start-1 lg:col-span-2">
-          {/* Description list*/}
-          <LessonCard/>
-        </div>
-        <ProgressBar/>
-      </div>
+    <Hero/>
+    <LogoCloud/>
+    <Features/>
     </>
   )
 }
+
+export default Index
