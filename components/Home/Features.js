@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Features() {
   return (
-    <div className="relative pt-16 pb-32 overflow-hidden">
+    <div id="features" className="relative pt-16 pb-32 overflow-hidden">
       <div className="relative">
         <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
           <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
@@ -82,12 +82,13 @@ export default function Features() {
                   We help you all the way from creating and funding your wallet to minting your first NFT. And it will not stop there. Learn how to join a DAO or use some more advanced DEFI protocols.
                 </p>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-                  >
-                    Get started
-                  </a>
+                <Link href="sign-up">
+                    <a
+                      className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    >
+                      Get started
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -12,6 +12,8 @@ import NavLinks from './NavLinks';
 
 const navigation = [
   { name: 'Home', href: '/', protected: false },
+  { name: 'Features', href: '/#features', protected: false },
+  { name: 'FAQ', href: '/#faq', protected: false },
   { name: 'Welcome', href: '/welcome', protected: true },
   { name: 'Notion Setup', href: '/setup/copy-notion-template', protected: true },
   { name: 'Account Settings', href: '/account/plan', protected: true }
