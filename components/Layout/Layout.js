@@ -1,20 +1,38 @@
-import React from 'react'
-import Meta from '../Layout/Meta'
-import Nav from '../Layout/Navigation/Nav'
-import AppContent from '../UI/AppContent'
-import Footer from './Footer'
+import React from 'react';
+import Meta from '../Layout/Meta';
+import Nav from '../Layout/NavigationLanding/Nav';
+import AppContent from '../UI/AppContent';
+import Footer from './Footer';
+import Navbar from './NavigationApp/Navbar';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
-    return (
-        <>
-            <Meta />
-            <AppContent>
-                <Nav />
-                {children}
-                <Footer />
-            </AppContent>
-        </>
-    )
-}
+  const router = useRouter();
 
-export default Layout
+  const landingPageRoutes = ['/', '/register', '/login'];
+
+  if (landingPageRoutes.includes(router.pathname)) {
+    return (
+      <>
+        <Meta />
+        <AppContent>
+          <Nav />
+          {children}
+          <Footer />
+        </AppContent>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Meta />
+      <AppContent>
+        <Navbar />
+        <main>{children}</main>
+      </AppContent>
+    </>
+  );
+};
+
+export default Layout;
