@@ -17,7 +17,7 @@ export default function Welcome() {
   return (
 
     <SectionContent>
-      <div className="text-center">
+      <div className="text-center py-10">
         <h2 className="text-base font-semibold text-blue-600 tracking-wide uppercase">Thanks for signing up 🎉</h2>
         <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
           We are launching soon 🚀

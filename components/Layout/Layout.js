@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <Meta />
       <AppContent>
         <Navbar />
-        <main className='py-10'>{children}</main>
+        <main>{children}</main>
       </AppContent>
     </>
   );
